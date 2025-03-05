@@ -1,0 +1,68 @@
+/* Global Styles */
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Sanduhr-Animation */
+.hourglassBackground {
+    position: relative;
+    background-color: rgb(71, 60, 60);
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    margin: 30px auto;
+}
+
+.hourglassContainer {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 50px;
+    height: 70px;
+    animation: hourglassRotate 2s ease-in 0s infinite;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes hourglassRotate {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(180deg); }
+    100% { transform: rotateX(180deg); }
+}
+
+/* Karten-Animation */
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.red { background-color: #e74c3c; }
+.white { background-color: #ecf0f1; color: black; }
+.blue { background-color: #3498db; }
